@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
-  <title>JagoPro — Customer satisfaction survey</title>
-  <link rel="stylesheet" href="assets/styles.css?v=2026.4">
-  <link rel="stylesheet" href="assets/refinements.css?v=2026.7">
+  <title>JagoPro — Customer Voice 2026</title>
+  <link rel="stylesheet" href="assets/styles.css?v=2.0">
+  <link rel="stylesheet" href="assets/survey-v2.css?v=2.0">
 </head>
 <body data-lang="en">
 <header>
@@ -16,176 +16,158 @@
       <div class="brandline"></div>
       <div class="brandcopy">Customer Voice<br>2026</div>
     </div>
-    <nav class="lang"><a href="pl.html">PL</a><a class="active" href="en.html">EN</a></nav>
+    <nav class="lang" aria-label="Language"><a href="pl.html">PL</a><a class="active" href="en.html" aria-current="page">EN</a></nav>
   </div>
 </header>
 
-<main class="shell">
-  <section class="hero">
-    <div>
-      <span class="eyebrow">Customer Voice</span>
-      <h1>Help us make our cooperation even better.</h1>
-      <p>This short survey takes about 3 minutes. We want to better understand what works well in our cooperation and where we can improve. Your feedback will help us focus on the right priorities.</p>
+<main class="shell survey-page">
+  <section class="survey-hero">
+    <span class="eyebrow">Customer Voice 2026</span>
+    <h1>Help us make working with JagoPro even better.</h1>
+    <p>This short survey will help us understand what works well and where we should focus first.</p>
+    <div class="survey-meta" aria-label="Survey information">
+      <span>about 3 min</span><span>5 steps</span><span>contact details optional</span>
     </div>
-    <div class="molecule"><span class="dot" style="right:42%;top:42%"></span></div>
   </section>
 
-  <section class="survey-layout">
-    <aside class="steps">
-      <span class="eyebrow">5 steps</span>
+  <section class="survey-layout survey-layout-v2">
+    <aside class="steps steps-v2" aria-label="Survey steps">
+      <span class="eyebrow">Progress</span>
       <ol>
-        <li class="active">About you</li>
-        <li>Overall rating</li>
-        <li>Areas of cooperation</li>
-        <li>Improvement priority</li>
-        <li>What to preserve</li>
+        <li><button type="button" class="step-button active" data-step="0"><span class="step-number">01</span><span>Overall rating</span></button></li>
+        <li><button type="button" class="step-button" data-step="1" disabled><span class="step-number">02</span><span>Key areas</span></button></li>
+        <li><button type="button" class="step-button" data-step="2" disabled><span class="step-number">03</span><span>What to improve</span></button></li>
+        <li><button type="button" class="step-button" data-step="3" disabled><span class="step-number">04</span><span>What works well</span></button></li>
+        <li><button type="button" class="step-button" data-step="4" disabled><span class="step-number">05</span><span>About you</span></button></li>
       </ol>
     </aside>
 
-    <div class="card">
+    <div class="mobile-stepbar" aria-live="polite">
+      <div><span id="mobile-step-count">1 of 5</span><strong id="mobile-step-title">Overall rating</strong></div>
+      <div class="mobile-dots" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="card survey-card-v2">
       <div id="form-body-wrap">
-        <div class="card-head">
-          <div><b>Customer satisfaction survey</b><div class="hint">JagoPro · Quality &amp; Innovation Synergy</div></div>
+        <div class="card-head card-head-v2">
+          <div><b>Customer satisfaction survey</b><div class="hint">JagoPro · Customer Voice 2026</div></div>
           <b id="step-count">1/5</b>
         </div>
-        <div class="progress"><span id="progress-fill"></span></div>
+        <div class="progress" aria-hidden="true"><span id="progress-fill"></span></div>
 
-        <form id="feedback-form">
-          <div class="form-body">
-            <section class="section active">
-              <div class="question">
-                <label class="q-label" for="company">Company <span class="required">*</span></label>
-                <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name" required>
+        <form id="feedback-form" novalidate>
+          <div class="form-body form-body-v2">
+            <section class="section active" data-title="Overall rating">
+              <div class="section-heading">
+                <span class="section-kicker">01</span>
+                <div><h2>Overall rating</h2><p>Let’s start with the overall picture of working with JagoPro.</p></div>
               </div>
-              <div class="question">
-                <label class="q-label" for="role">Which area best describes your role in working with JagoPro? <span class="required">*</span></label>
-                <select id="role" name="role" required>
-                  <option value="">Select an area</option>
-                  <option value="procurement">Procurement</option>
-                  <option value="rd">R&amp;D / Product Development</option>
-                  <option value="quality">Quality / Regulatory</option>
-                  <option value="supply">Supply Chain / Logistics</option>
-                  <option value="sales">Sales / Marketing / Brand</option>
-                  <option value="management">Management</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="question">
-                <label class="q-label" for="cooperation">How long have you been working with JagoPro? <span class="required">*</span></label>
-                <select id="cooperation" name="cooperation" required>
-                  <option value="">Select a period</option>
-                  <option value="lt1">Less than 1 year</option>
-                  <option value="1to3">1–3 years</option>
-                  <option value="3to5">3–5 years</option>
-                  <option value="gt5">More than 5 years</option>
-                </select>
-              </div>
-              <div class="grid-2">
-                <div class="question">
-                  <label class="q-label" for="name">Name <span class="optional">(optional)</span></label>
-                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Full name">
-                </div>
-                <div class="question">
-                  <label class="q-label" for="email">E-mail <span class="optional">(optional)</span></label>
-                  <input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com">
-                </div>
-              </div>
-              <p class="privacy-note">Providing contact details is optional. It will help us follow up if any part of your feedback would benefit from clarification.</p>
-            </section>
 
-            <section class="section">
-              <div class="question">
-                <span class="q-label">How likely are you to recommend JagoPro as a contract manufacturing partner? <span class="required">*</span></span>
-                <div id="nps-grid" class="nps-grid"></div>
+              <fieldset class="question question-fieldset" data-required-group="nps">
+                <legend class="q-label">How likely are you to recommend JagoPro as a contract manufacturing partner? <span class="required">*</span></legend>
+                <div class="nps-grid nps-grid-v2">
+                  <label><input type="radio" name="nps" value="0"><span>0</span></label><label><input type="radio" name="nps" value="1"><span>1</span></label><label><input type="radio" name="nps" value="2"><span>2</span></label><label><input type="radio" name="nps" value="3"><span>3</span></label><label><input type="radio" name="nps" value="4"><span>4</span></label><label><input type="radio" name="nps" value="5"><span>5</span></label><label><input type="radio" name="nps" value="6"><span>6</span></label><label><input type="radio" name="nps" value="7"><span>7</span></label><label><input type="radio" name="nps" value="8"><span>8</span></label><label><input type="radio" name="nps" value="9"><span>9</span></label><label><input type="radio" name="nps" value="10"><span>10</span></label>
+                </div>
                 <div class="nps-legend"><span>Not at all likely</span><span>Extremely likely</span></div>
-              </div>
-              <div class="question">
-                <label class="q-label" for="nps_reason">What had the greatest influence on your score? <span class="optional">(optional)</span></label>
-                <textarea id="nps_reason" name="nps_reason" placeholder="A brief answer is perfectly sufficient."></textarea>
-              </div>
-              <div class="question">
-                <span class="q-label">Overall, how would you rate your cooperation with JagoPro? <span class="required">*</span></span>
-                <div id="overall-grid" class="scale5 survey-choice-stack"></div>
-              </div>
-              <div class="question">
-                <span class="q-label">How does JagoPro compare with other manufacturers or suppliers you work with? <span class="required">*</span></span>
-                <div id="competitor-grid" class="choice-grid survey-choice-stack"></div>
-              </div>
-            </section>
+              </fieldset>
 
-            <section class="section" data-matrix="true">
               <div class="question">
-                <span class="q-label">How would you rate JagoPro in the following areas? <span class="required">*</span></span>
-                <span class="hint matrix-help">Please rate each area from 5 to 1: 5 means “very good”, 3 “neutral”, and 1 “very poor”. If an area has not been part of your cooperation with JagoPro or you do not have enough experience to assess it fairly, choose “—”.</span>
-                <div class="matrix-wrap">
-                  <table class="matrix survey-matrix">
-                    <thead><tr><th>Area</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th class="matrix-na-head"></th></tr></thead>
-                    <tbody id="matrix-body"></tbody>
-                  </table>
+                <label class="q-label" id="nps-reason-label" for="nps_reason">What was the main reason for your score? <span class="optional">(optional)</span></label>
+                <textarea id="nps_reason" name="nps_reason" placeholder="A short answer is fine."></textarea>
+              </div>
+
+              <fieldset class="question question-fieldset" data-required-group="overall">
+                <legend class="q-label">Overall, how would you rate working with JagoPro? <span class="required">*</span></legend>
+                <div class="choice-list">
+                  <label><input type="radio" name="overall" value="5"><span><b>5</b> Very good</span></label>
+                  <label><input type="radio" name="overall" value="4"><span><b>4</b> Good</span></label>
+                  <label><input type="radio" name="overall" value="3"><span><b>3</b> Neutral</span></label>
+                  <label><input type="radio" name="overall" value="2"><span><b>2</b> Poor</span></label>
+                  <label><input type="radio" name="overall" value="1"><span><b>1</b> Very poor</span></label>
                 </div>
+              </fieldset>
+
+              <fieldset class="question question-fieldset" data-required-group="competitor">
+                <legend class="q-label">How does JagoPro compare with other manufacturers or suppliers you work with? <span class="required">*</span></legend>
+                <div class="choice-list">
+                  <label><input type="radio" name="competitor" value="5"><span>Much better</span></label>
+                  <label><input type="radio" name="competitor" value="4"><span>Somewhat better</span></label>
+                  <label><input type="radio" name="competitor" value="3"><span>About the same</span></label>
+                  <label><input type="radio" name="competitor" value="2"><span>Somewhat worse</span></label>
+                  <label><input type="radio" name="competitor" value="1"><span>Much worse</span></label>
+                  <label class="neutral-choice-v2"><input type="radio" name="competitor" value="na"><span>I don’t have enough experience to compare</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="question question-fieldset" data-required-group="future_relationship">
+                <legend class="q-label">How likely is your company to continue working with JagoPro? <span class="required">*</span></legend>
+                <div class="choice-list compact-choice-list">
+                  <label><input type="radio" name="future_relationship" value="5"><span><b>5</b> Very likely</span></label>
+                  <label><input type="radio" name="future_relationship" value="4"><span><b>4</b> Likely</span></label>
+                  <label><input type="radio" name="future_relationship" value="3"><span><b>3</b> Not sure</span></label>
+                  <label><input type="radio" name="future_relationship" value="2"><span><b>2</b> Unlikely</span></label>
+                  <label><input type="radio" name="future_relationship" value="1"><span><b>1</b> Very unlikely</span></label>
+                  <label class="neutral-choice-v2"><input type="radio" name="future_relationship" value="na"><span>I can’t assess this</span></label>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="section" data-title="Key areas">
+              <div class="section-heading">
+                <span class="section-kicker">02</span>
+                <div><h2>Key areas</h2><p>Rate each area separately. If it has not been part of your work with JagoPro, choose “—”.</p></div>
+              </div>
+              <div class="scale-key"><span><b>5</b> very good</span><span><b>3</b> neutral</span><span><b>1</b> very poor</span><span><b>—</b> can’t assess</span></div>
+
+              <div class="driver-grid">
+                <fieldset class="driver-card" data-required-group="quality"><legend>Product quality</legend><div class="rating-row"><label><input type="radio" name="quality" value="5"><span>5</span></label><label><input type="radio" name="quality" value="4"><span>4</span></label><label><input type="radio" name="quality" value="3"><span>3</span></label><label><input type="radio" name="quality" value="2"><span>2</span></label><label><input type="radio" name="quality" value="1"><span>1</span></label><label class="na"><input type="radio" name="quality" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="delivery"><legend>Delivery reliability</legend><div class="rating-row"><label><input type="radio" name="delivery" value="5"><span>5</span></label><label><input type="radio" name="delivery" value="4"><span>4</span></label><label><input type="radio" name="delivery" value="3"><span>3</span></label><label><input type="radio" name="delivery" value="2"><span>2</span></label><label><input type="radio" name="delivery" value="1"><span>1</span></label><label class="na"><input type="radio" name="delivery" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="communication"><legend>Quality of communication</legend><div class="rating-row"><label><input type="radio" name="communication" value="5"><span>5</span></label><label><input type="radio" name="communication" value="4"><span>4</span></label><label><input type="radio" name="communication" value="3"><span>3</span></label><label><input type="radio" name="communication" value="2"><span>2</span></label><label><input type="radio" name="communication" value="1"><span>1</span></label><label class="na"><input type="radio" name="communication" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="proactive"><legend>Communication about changes and risks</legend><div class="rating-row"><label><input type="radio" name="proactive" value="5"><span>5</span></label><label><input type="radio" name="proactive" value="4"><span>4</span></label><label><input type="radio" name="proactive" value="3"><span>3</span></label><label><input type="radio" name="proactive" value="2"><span>2</span></label><label><input type="radio" name="proactive" value="1"><span>1</span></label><label class="na"><input type="radio" name="proactive" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="technical"><legend>Technical support</legend><div class="rating-row"><label><input type="radio" name="technical" value="5"><span>5</span></label><label><input type="radio" name="technical" value="4"><span>4</span></label><label><input type="radio" name="technical" value="3"><span>3</span></label><label><input type="radio" name="technical" value="2"><span>2</span></label><label><input type="radio" name="technical" value="1"><span>1</span></label><label class="na"><input type="radio" name="technical" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="flexibility"><legend>Flexibility in working together</legend><div class="rating-row"><label><input type="radio" name="flexibility" value="5"><span>5</span></label><label><input type="radio" name="flexibility" value="4"><span>4</span></label><label><input type="radio" name="flexibility" value="3"><span>3</span></label><label><input type="radio" name="flexibility" value="2"><span>2</span></label><label><input type="radio" name="flexibility" value="1"><span>1</span></label><label class="na"><input type="radio" name="flexibility" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="development"><legend>Product development and launch support</legend><div class="rating-row"><label><input type="radio" name="development" value="5"><span>5</span></label><label><input type="radio" name="development" value="4"><span>4</span></label><label><input type="radio" name="development" value="3"><span>3</span></label><label><input type="radio" name="development" value="2"><span>2</span></label><label><input type="radio" name="development" value="1"><span>1</span></label><label class="na"><input type="radio" name="development" value="na"><span>—</span></label></div></fieldset>
+                <fieldset class="driver-card" data-required-group="complaints"><legend>Handling problems and complaints</legend><div class="rating-row"><label><input type="radio" name="complaints" value="5"><span>5</span></label><label><input type="radio" name="complaints" value="4"><span>4</span></label><label><input type="radio" name="complaints" value="3"><span>3</span></label><label><input type="radio" name="complaints" value="2"><span>2</span></label><label><input type="radio" name="complaints" value="1"><span>1</span></label><label class="na"><input type="radio" name="complaints" value="na"><span>—</span></label></div></fieldset>
               </div>
             </section>
 
-            <section class="section">
-              <div class="question">
-                <label class="q-label" for="improvement_priority">If we could improve just one aspect of our cooperation, which area should be our priority? <span class="required">*</span></label>
-                <select id="improvement_priority" name="improvement_priority" required>
-                  <option value="">Select an area</option>
-                  <option value="quality">Product quality and consistency</option>
-                  <option value="delivery">Delivery reliability and predictability</option>
-                  <option value="communication">Speed and quality of communication</option>
-                  <option value="proactive">Proactive communication about changes and risks</option>
-                  <option value="technical">Technical expertise and quality of advice</option>
-                  <option value="flexibility">Flexibility and responsiveness</option>
-                  <option value="development">Product development and launch</option>
-                  <option value="complaints">Handling problems and complaints</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="question">
-                <label class="q-label" for="improvement_reason">What could we do better in this area? <span class="optional">(optional)</span></label>
-                <textarea id="improvement_reason" name="improvement_reason" placeholder="If possible, share a specific example or briefly describe the change that would be most valuable to you."></textarea>
-              </div>
+            <section class="section" data-title="What to improve">
+              <div class="section-heading"><span class="section-kicker">03</span><div><h2>What to improve</h2><p>If we focus on one thing, we want it to be the one that matters most.</p></div></div>
+              <div class="question"><label class="q-label" for="improvement_priority">What should we focus on first? <span class="required">*</span></label><select id="improvement_priority" name="improvement_priority" required><option value="">Select an area</option><option value="quality">Product quality</option><option value="delivery">Delivery reliability</option><option value="communication">Quality of communication</option><option value="proactive">Communication about changes and risks</option><option value="technical">Technical support</option><option value="flexibility">Flexibility in working together</option><option value="development">Product development and launch support</option><option value="complaints">Handling problems and complaints</option><option value="other">Other</option><option value="none">No specific area stands out for improvement</option></select></div>
+              <div class="question" id="improvement-reason-wrap"><label class="q-label" for="improvement_reason">What could we do better? <span class="optional">(optional)</span></label><textarea id="improvement_reason" name="improvement_reason" placeholder="If you can, share an example or briefly describe what you would like us to change."></textarea></div>
             </section>
 
-            <section class="section">
-              <div class="question">
-                <label class="q-label" for="keep_comment">What works particularly well in our cooperation and is worth preserving? <span class="optional">(optional)</span></label>
-                <textarea id="keep_comment" name="keep_comment" placeholder="What do you value most about working with JagoPro?"></textarea>
+            <section class="section" data-title="What works well">
+              <div class="section-heading"><span class="section-kicker">04</span><div><h2>What works well</h2><p>We also want to make sure we keep the things that already work.</p></div></div>
+              <div class="question"><label class="q-label" for="keep_comment">What works especially well when you work with JagoPro and should stay as it is? <span class="optional">(optional)</span></label><textarea id="keep_comment" name="keep_comment" placeholder="What do you value most?"></textarea></div>
+              <div class="question"><label class="q-label" for="additional_comment">Is there anything else you would like to share? <span class="optional">(optional)</span></label><textarea id="additional_comment" name="additional_comment" placeholder="Add any other comment, suggestion or context you would like us to know."></textarea></div>
+            </section>
+
+            <section class="section" data-title="About you">
+              <div class="section-heading"><span class="section-kicker">05</span><div><h2>About you</h2><p>A few final details will help us put your feedback in the right context.</p></div></div>
+              <div class="question"><label class="q-label" for="company">Company <span class="required">*</span></label><input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name" required></div>
+              <div class="grid-2">
+                <div class="question"><label class="q-label" for="role">Which area best describes your role in working with JagoPro? <span class="required">*</span></label><select id="role" name="role" required><option value="">Select an area</option><option value="procurement">Procurement</option><option value="rd">R&amp;D / Product Development</option><option value="quality">Quality / Regulatory</option><option value="supply">Supply Chain / Logistics</option><option value="sales">Sales / Marketing / Brand</option><option value="management">Management</option><option value="other">Other</option></select></div>
+                <div class="question"><label class="q-label" for="cooperation">How long have you been working with JagoPro? <span class="required">*</span></label><select id="cooperation" name="cooperation" required><option value="">Select a period</option><option value="lt1">Less than 1 year</option><option value="1to3">1–3 years</option><option value="3to5">3–5 years</option><option value="gt5">More than 5 years</option></select></div>
               </div>
-              <div class="question">
-                <label class="q-label" for="additional_comment">Is there anything else you would like to share with us? <span class="optional">(optional)</span></label>
-                <textarea id="additional_comment" name="additional_comment" placeholder="Any additional comment, suggestion or context about your cooperation with JagoPro."></textarea>
-              </div>
+              <fieldset class="question question-fieldset contact-question" data-required-group="contact_permission"><legend class="q-label">May we contact you about this feedback? <span class="required">*</span></legend><div class="binary-choice"><label><input type="radio" name="contact_permission" value="yes"><span>Yes</span></label><label><input type="radio" name="contact_permission" value="no"><span>No</span></label></div></fieldset>
+              <div id="contact-fields" class="contact-fields" hidden><div class="grid-2"><div class="question"><label class="q-label" for="name">Name <span class="optional">(optional)</span></label><input id="name" name="name" type="text" autocomplete="name" placeholder="Full name"></div><div class="question"><label class="q-label" for="email">E-mail <span class="required">*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com"></div></div></div>
+              <p class="privacy-note">We will only use your contact details if we need to clarify something in your feedback.</p>
             </section>
           </div>
 
-          <div id="validation" class="validation"></div>
-          <div class="form-actions">
-            <button id="prev-btn" class="btn btn-secondary" type="button">Back</button>
-            <button id="next-btn" class="btn btn-primary" type="button">Next</button>
-          </div>
+          <div id="validation" class="validation" role="alert" aria-live="assertive"></div>
+          <div class="form-actions form-actions-v2"><button id="prev-btn" class="btn btn-secondary" type="button">Back</button><button id="next-btn" class="btn btn-primary" type="button">Next</button></div>
         </form>
       </div>
 
-      <div id="success" class="success"><div><div class="success-mark">✓</div><h2>Thank you for your time.</h2><p>Your feedback will help us make our cooperation even better.</p></div></div>
+      <div id="success" class="success success-v2" aria-live="polite"><div><div class="success-mark">✓</div><h2 tabindex="-1">Thank you for your time.</h2><p>Your feedback will help us work better with you and other customers.</p></div></div>
     </div>
   </section>
 </main>
 
-<footer class="shell footer"><span>JagoPro · Quality &amp; Innovation Synergy</span><span>jago@jagopro.pl · +48 32 614 30 50 · www.jagopro.pl</span></footer>
-
-<script>
-document.getElementById('nps-grid').innerHTML=[...Array(11).keys()].map(v=>`<div class="nps-option"><input id="nps${v}" type="radio" name="nps" value="${v}" ${v===0?'required':''}><label for="nps${v}">${v}</label></div>`).join('');
-const overallLabels={5:'very good',4:'good',3:'neutral',2:'poor',1:'very poor'};
-document.getElementById('overall-grid').innerHTML=[5,4,3,2,1].map((v,i)=>`<div class="choice"><input id="overall${v}" type="radio" name="overall" value="${v}" ${i===0?'required':''}><label for="overall${v}">${v} · ${overallLabels[v]}</label></div>`).join('');
-const ds=[['quality','Product quality and consistency'],['delivery','Delivery reliability and predictability'],['communication','Speed and quality of communication'],['proactive','Proactive communication about changes and risks'],['technical','Technical expertise and quality of advice'],['flexibility','Flexibility and responsiveness'],['development','Product development and launch'],['complaints','Handling problems and complaints']];
-document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[5,4,3,2,1,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}" ${v==='na'?'title="I cannot assess this"':''}>${v==='na'?'—':v}</label></td>`).join('')}</tr>`).join('');
-const cp=[['5','Much better'],['4','Somewhat better'],['3','About the same'],['2','Somewhat worse'],['1','Much worse'],['na','I can’t make a fair comparison']];
-document.getElementById('competitor-grid').innerHTML=cp.map(([v,l],i)=>`<div class="choice ${v==='na'?'neutral-choice':''}"><input id="cmp${v}" type="radio" name="competitor" value="${v}" ${i===0?'required':''}><label for="cmp${v}">${l}</label></div>`).join('');
-</script>
-<script src="assets/config.js?v=2026.4"></script>
-<script src="assets/survey.js?v=2026.11"></script>
-<script src="assets/copy.js?v=2026.12"></script>
+<footer class="shell footer"><span>JagoPro</span><span><a class="footer-link" href="mailto:jago@jagopro.pl">jago@jagopro.pl</a> · +48 32 614 30 50 · <a class="footer-link" href="https://www.jagopro.pl" target="_blank" rel="noopener noreferrer">www.jagopro.pl</a></span></footer>
+<script src="assets/config.js?v=2.0"></script>
+<script src="assets/survey.js?v=2.0"></script>
 </body>
 </html>
