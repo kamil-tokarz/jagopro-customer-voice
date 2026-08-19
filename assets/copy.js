@@ -97,10 +97,10 @@
       if(!success.classList.contains('active'))return;
       const h2=success.querySelector('h2');
       const p=success.querySelector('p');
-      if(h2)h2.textContent=copy.thanksTitle;
-      if(p)p.textContent=copy.thanksText;
+      if(h2&&h2.textContent!==copy.thanksTitle)h2.textContent=copy.thanksTitle;
+      if(p&&p.textContent!==copy.thanksText)p.textContent=copy.thanksText;
     };
-    new MutationObserver(syncSuccess).observe(success,{attributes:true,attributeFilter:['class'],childList:true,subtree:true});
+    new MutationObserver(syncSuccess).observe(success,{attributes:true,attributeFilter:['class']});
     syncSuccess();
   }
 })();
