@@ -34,8 +34,8 @@
       cmp3:'Podobnie',
       cmpNa:'Trudno mi porównać',
       matrixValidation:'Oceń każdy obszar w skali 5–1 lub wybierz „—”, jeśli trudno Ci go ocenić.',
-      thanksTitle:'Dziękujemy za Twój czas.',
-      thanksText:'Twoja opinia pomoże nam lepiej współpracować z klientami.'
+      thanksTitle:'Dziękujemy za poświęcony czas.',
+      thanksText:'Twoja opinia pomoże nam lepiej współpracować z Tobą i innymi klientami.'
     },
     en:{
       heroTitle:'Help us make working with JagoPro even better.',
@@ -48,15 +48,15 @@
       npsReason:'What was the main reason for your score?',
       npsPlaceholder:'A short answer is fine.',
       matrix:'Rate each area from 5 to 1, where 5 means “very good”, 3 “neutral” and 1 “very poor”. If an area is not relevant to your work with JagoPro or you cannot rate it, choose “—”.',
-      improvement:'If we could improve one part of working with JagoPro, what should we focus on first?',
+      improvement:'If we could improve one aspect of working with JagoPro, what should we focus on first?',
       improvementPlaceholder:'If you can, share an example or briefly describe what you would like us to change.',
-      keep:'What works especially well when you work with JagoPro and should not change?',
+      keep:'What works especially well when you work with JagoPro and should stay as it is?',
       additionalPlaceholder:'Add any other comment, suggestion or context you would like us to know.',
       cmp3:'About the same',
       cmpNa:'I don’t have enough experience to compare',
       matrixValidation:'Please rate each area from 5 to 1, or choose “—” if you cannot rate it.',
       thanksTitle:'Thank you for your time.',
-      thanksText:'Your feedback will help us make working with JagoPro better.'
+      thanksText:'Your feedback will help us work better with you and other customers.'
     }
   }[lang];
 
@@ -64,6 +64,7 @@
   setText('.hero p',copy.heroText);
   document.querySelectorAll('.steps li').forEach((el,i)=>{if(copy.steps[i])el.textContent=copy.steps[i]});
   setText('.card-head .hint',copy.cardHint);
+  setText('footer.footer span:first-child','JagoPro');
   setLead(labelFor('role'),copy.role);
   setText('.section:first-of-type .privacy-note',copy.contact);
   setLead(questionLabel('nps-grid'),copy.nps);
