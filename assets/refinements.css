@@ -1,4 +1,4 @@
-/* Survey refinements — Customer Voice 2026.5 */
+/* Survey refinements — Customer Voice 2026.6 */
 input[type="text"],
 input[type="email"],
 select{
@@ -40,7 +40,7 @@ textarea::placeholder{
   color:#586462;
 }
 
-/* Matrix: one clear instruction, descending scale 5→1, and 0 for "cannot assess". */
+/* Matrix: one clear instruction, descending scale 5→1, and a dash outside the rating scale for "cannot assess". */
 .matrix-help{
   margin-bottom:12px;
   max-width:none;
@@ -55,11 +55,11 @@ textarea::placeholder{
 }
 
 body[data-lang="pl"] .matrix-help::after{
-  content:"Oceń każdy obszar w skali od 5 do 1: 5 oznacza „bardzo dobrze”, 3 — „neutralnie”, a 1 — „bardzo źle”. Jeśli dany obszar nie dotyczy Twojej współpracy z JagoPro lub nie masz wystarczającego doświadczenia, aby rzetelnie go ocenić, wybierz 0 („Nie mogę ocenić”).";
+  content:"Oceń każdy obszar w skali od 5 do 1: 5 oznacza „bardzo dobrze”, 3 — „neutralnie”, a 1 — „bardzo źle”. Jeśli dany obszar nie dotyczy Twojej współpracy z JagoPro lub nie masz wystarczającego doświadczenia, aby rzetelnie go ocenić, wybierz „—” („Nie mogę ocenić”).";
 }
 
 body[data-lang="en"] .matrix-help::after{
-  content:"Please rate each area from 5 to 1: 5 means “very good”, 3 “neutral”, and 1 “very poor”. If an area has not been part of your cooperation with JagoPro or you do not have enough experience to assess it fairly, choose 0 (“I can’t assess this”).";
+  content:"Please rate each area from 5 to 1: 5 means “very good”, 3 “neutral”, and 1 “very poor”. If an area has not been part of your cooperation with JagoPro or you do not have enough experience to assess it fairly, select “—” (“I can’t assess this”).";
 }
 
 .section[data-matrix="true"] .question > p.hint{
@@ -153,8 +153,9 @@ body[data-lang="en"] .matrix-na-head::after{
 }
 
 .matrix-na-cell .matrix-radio + label::after{
-  content:"0";
-  font-size:14px;
+  content:"—";
+  font-size:17px;
+  line-height:1;
   font-weight:400;
 }
 
