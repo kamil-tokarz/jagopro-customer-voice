@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#ffffff">
   <title>JagoPro — Ankieta satysfakcji klienta</title>
   <link rel="stylesheet" href="assets/styles.css?v=2026.4">
-  <link rel="stylesheet" href="assets/refinements.css?v=2026.4">
+  <link rel="stylesheet" href="assets/refinements.css?v=2026.7">
 </head>
 <body data-lang="pl">
 <header>
@@ -105,14 +105,13 @@
             <section class="section" data-matrix="true">
               <div class="question">
                 <span class="q-label">Jak oceniasz JagoPro w poniższych obszarach? <span class="required">*</span></span>
-                <span class="hint matrix-help">Jeśli dany obszar nie dotyczy Twojej współpracy z JagoPro lub nie masz wystarczającego doświadczenia, aby go ocenić, wybierz „Nie mogę ocenić”.</span>
+                <span class="hint matrix-help">Oceń każdy obszar w skali od 5 do 1: 5 oznacza „bardzo dobrze”, 3 „neutralnie”, a 1 „bardzo źle”. Jeśli dany obszar nie dotyczy Twojej współpracy z JagoPro lub nie masz wystarczającego doświadczenia, wybierz 0 — „Nie mogę ocenić”.</span>
                 <div class="matrix-wrap">
                   <table class="matrix survey-matrix">
-                    <thead><tr><th>Obszar</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th class="matrix-na-head">Nie mogę ocenić</th></tr></thead>
+                    <thead><tr><th>Obszar</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th class="matrix-na-head">Nie mogę ocenić</th></tr></thead>
                     <tbody id="matrix-body"></tbody>
                   </table>
                 </div>
-                <p class="hint">1 = bardzo źle · 3 = neutralnie · 5 = bardzo dobrze</p>
               </div>
             </section>
 
@@ -181,7 +180,7 @@ document.getElementById('nps-grid').innerHTML=[...Array(11).keys()].map(v=>`<div
 const overallLabels={5:'bardzo dobrze',4:'raczej dobrze',3:'neutralnie',2:'raczej źle',1:'bardzo źle'};
 document.getElementById('overall-grid').innerHTML=[5,4,3,2,1].map((v,i)=>`<div class="choice"><input id="overall${v}" type="radio" name="overall" value="${v}" ${i===0?'required':''}><label for="overall${v}">${v} · ${overallLabels[v]}</label></div>`).join('');
 const ds=[['quality','Jakość i powtarzalność produktów'],['delivery','Terminowość i przewidywalność realizacji'],['communication','Szybkość i jakość komunikacji'],['proactive','Proaktywne informowanie o zmianach i ryzykach'],['technical','Kompetencje techniczne i jakość doradztwa'],['flexibility','Elastyczność i szybkość reagowania'],['development','Współpraca przy rozwoju i wdrażaniu produktów'],['complaints','Rozwiązywanie problemów i obsługa reklamacji']];
-document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[1,2,3,4,5,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}">${v==='na'?'Nie mogę ocenić':v}</label></td>`).join('')}</tr>`).join('');
+document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[5,4,3,2,1,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}" ${v==='na'?'title="Nie mogę ocenić"':''}>${v==='na'?'0':v}</label></td>`).join('')}</tr>`).join('');
 const cp=[['5','Zdecydowanie lepiej'],['4','Raczej lepiej'],['3','Porównywalnie'],['2','Raczej gorzej'],['1','Zdecydowanie gorzej'],['na','Nie mogę rzetelnie porównać']];
 document.getElementById('competitor-grid').innerHTML=cp.map(([v,l],i)=>`<div class="choice ${v==='na'?'neutral-choice':''}"><input id="cmp${v}" type="radio" name="competitor" value="${v}" ${i===0?'required':''}><label for="cmp${v}">${l}</label></div>`).join('');
 </script>
