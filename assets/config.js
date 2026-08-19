@@ -1,1 +1,1 @@
-window.JagoProFeedbackConfig={storageMode:'local',submitEndpoint:'',analyticsEndpoint:'',surveyVersion:'2026.4'};
+window.JagoProFeedbackConfig={storageMode:'local',submitEndpoint:'',analyticsEndpoint:'',surveyVersion:'2026.5'};
