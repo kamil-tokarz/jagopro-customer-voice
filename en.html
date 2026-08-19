@@ -80,6 +80,17 @@
                   <option value="gt5">More than 5 years</option>
                 </select>
               </div>
+              <div class="grid-2">
+                <div class="question">
+                  <label class="q-label" for="name">Name <span class="optional">(optional)</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Full name">
+                </div>
+                <div class="question">
+                  <label class="q-label" for="email">E-mail <span class="optional">(optional)</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com">
+                </div>
+              </div>
+              <p class="privacy-note">Providing contact details is optional. It will help us follow up if any part of your feedback would benefit from clarification.</p>
             </section>
 
             <section class="section">
@@ -105,10 +116,10 @@
             <section class="section" data-matrix="true">
               <div class="question">
                 <span class="q-label">How would you rate JagoPro in the following areas? <span class="required">*</span></span>
-                <span class="hint matrix-help">Please rate each area from 5 to 1: 5 means “very good”, 3 “neutral”, and 1 “very poor”. If an area has not been part of your cooperation with JagoPro or you do not have enough experience to assess it fairly, choose 0 — “I can’t assess this”.</span>
+                <span class="hint matrix-help">Please rate each area from 5 to 1: 5 means “very good”, 3 “neutral”, and 1 “very poor”. If an area has not been part of your cooperation with JagoPro or you do not have enough experience to assess it fairly, choose “—”.</span>
                 <div class="matrix-wrap">
                   <table class="matrix survey-matrix">
-                    <thead><tr><th>Area</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th class="matrix-na-head">I can’t assess this</th></tr></thead>
+                    <thead><tr><th>Area</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th class="matrix-na-head"></th></tr></thead>
                     <tbody id="matrix-body"></tbody>
                   </table>
                 </div>
@@ -146,17 +157,6 @@
                 <label class="q-label" for="additional_comment">Is there anything else you would like to share with us? <span class="optional">(optional)</span></label>
                 <textarea id="additional_comment" name="additional_comment" placeholder="Any additional comment, suggestion or context about your cooperation with JagoPro."></textarea>
               </div>
-              <div class="grid-2">
-                <div class="question">
-                  <label class="q-label" for="name">Name <span class="optional">(optional)</span></label>
-                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Full name">
-                </div>
-                <div class="question">
-                  <label class="q-label" for="email">E-mail <span class="optional">(optional)</span></label>
-                  <input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com">
-                </div>
-              </div>
-              <p class="privacy-note">We will use your responses to review the quality of our cooperation and plan improvement actions. Providing contact details is optional.</p>
             </section>
           </div>
 
@@ -180,11 +180,11 @@ document.getElementById('nps-grid').innerHTML=[...Array(11).keys()].map(v=>`<div
 const overallLabels={5:'very good',4:'good',3:'neutral',2:'poor',1:'very poor'};
 document.getElementById('overall-grid').innerHTML=[5,4,3,2,1].map((v,i)=>`<div class="choice"><input id="overall${v}" type="radio" name="overall" value="${v}" ${i===0?'required':''}><label for="overall${v}">${v} · ${overallLabels[v]}</label></div>`).join('');
 const ds=[['quality','Product quality and consistency'],['delivery','Delivery reliability and predictability'],['communication','Speed and quality of communication'],['proactive','Proactive communication about changes and risks'],['technical','Technical expertise and quality of advice'],['flexibility','Flexibility and responsiveness'],['development','Product development and launch'],['complaints','Handling problems and complaints']];
-document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[5,4,3,2,1,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}" ${v==='na'?'title="I can’t assess this"':''}>${v==='na'?'0':v}</label></td>`).join('')}</tr>`).join('');
+document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[5,4,3,2,1,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}" ${v==='na'?'title="I cannot assess this"':''}>${v==='na'?'—':v}</label></td>`).join('')}</tr>`).join('');
 const cp=[['5','Much better'],['4','Somewhat better'],['3','About the same'],['2','Somewhat worse'],['1','Much worse'],['na','I can’t make a fair comparison']];
 document.getElementById('competitor-grid').innerHTML=cp.map(([v,l],i)=>`<div class="choice ${v==='na'?'neutral-choice':''}"><input id="cmp${v}" type="radio" name="competitor" value="${v}" ${i===0?'required':''}><label for="cmp${v}">${l}</label></div>`).join('');
 </script>
 <script src="assets/config.js?v=2026.4"></script>
-<script src="assets/survey.js?v=2026.4"></script>
+<script src="assets/survey.js?v=2026.10"></script>
 </body>
 </html>
