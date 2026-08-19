@@ -1,4 +1,4 @@
-/* Survey refinements — Customer Voice 2026.3 */
+/* Survey refinements — Customer Voice 2026.4 */
 input[type="text"],
 input[type="email"],
 select{
@@ -75,11 +75,11 @@ textarea::placeholder{
 }
 
 body[data-lang="pl"] .matrix-na-head::after{
-  content:"Brak podstaw";
+  content:"Nie mogę ocenić";
 }
 
 body[data-lang="en"] .matrix-na-head::after{
-  content:"Cannot assess";
+  content:"I can’t assess this";
 }
 
 .matrix-na-cell{
@@ -103,11 +103,11 @@ body[data-lang="en"] .matrix-na-head::after{
 }
 
 body[data-lang="pl"] .matrix-na-cell .matrix-radio + label::after{
-  content:"Brak podstaw";
+  content:"Nie mogę ocenić";
 }
 
 body[data-lang="en"] .matrix-na-cell .matrix-radio + label::after{
-  content:"Cannot assess";
+  content:"I can’t assess this";
 }
 
 .matrix-na-cell .matrix-radio:checked + label::after{

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <title>JagoPro — Customer satisfaction survey</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="assets/refinements.css">
+  <link rel="stylesheet" href="assets/styles.css?v=2026.4">
+  <link rel="stylesheet" href="assets/refinements.css?v=2026.4">
 </head>
 <body data-lang="en">
 <header>
@@ -24,8 +24,8 @@
   <section class="hero">
     <div>
       <span class="eyebrow">Customer Voice</span>
-      <h1>Help us work better together.</h1>
-      <p>A short survey about your relationship with JagoPro. It takes about 3 minutes. We want specific feedback: what works, what gets in the way and what we should improve first.</p>
+      <h1>Help us make our cooperation even better.</h1>
+      <p>This short survey takes about 3 minutes. We want to better understand what works well in our cooperation and where we can improve. Your feedback will help us focus on the right priorities.</p>
     </div>
     <div class="molecule"><span class="dot" style="right:42%;top:42%"></span></div>
   </section>
@@ -35,9 +35,9 @@
       <span class="eyebrow">5 steps</span>
       <ol>
         <li class="active">About you</li>
-        <li>Overall assessment</li>
-        <li>Experience areas</li>
-        <li>What to improve</li>
+        <li>Overall rating</li>
+        <li>Areas of cooperation</li>
+        <li>Improvement priority</li>
         <li>What to preserve</li>
       </ol>
     </aside>
@@ -58,9 +58,9 @@
                 <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name" required>
               </div>
               <div class="question">
-                <label class="q-label" for="role">Which area best describes your role? <span class="required">*</span></label>
+                <label class="q-label" for="role">Which area best describes your role in working with JagoPro? <span class="required">*</span></label>
                 <select id="role" name="role" required>
-                  <option value="">Select</option>
+                  <option value="">Select an area</option>
                   <option value="procurement">Procurement</option>
                   <option value="rd">R&amp;D / Product Development</option>
                   <option value="quality">Quality / Regulatory</option>
@@ -71,9 +71,9 @@
                 </select>
               </div>
               <div class="question">
-                <label class="q-label" for="cooperation">How long have you worked with JagoPro? <span class="required">*</span></label>
+                <label class="q-label" for="cooperation">How long have you been working with JagoPro? <span class="required">*</span></label>
                 <select id="cooperation" name="cooperation" required>
-                  <option value="">Select</option>
+                  <option value="">Select a period</option>
                   <option value="lt1">Less than 1 year</option>
                   <option value="1to3">1–3 years</option>
                   <option value="3to5">3–5 years</option>
@@ -89,15 +89,15 @@
                 <div class="nps-legend"><span>Not at all likely</span><span>Extremely likely</span></div>
               </div>
               <div class="question">
-                <label class="q-label" for="nps_reason">What was the main reason for your score?</label>
-                <textarea id="nps_reason" name="nps_reason" placeholder="One or two sentences are enough."></textarea>
+                <label class="q-label" for="nps_reason">What had the greatest influence on your score? <span class="optional">(optional)</span></label>
+                <textarea id="nps_reason" name="nps_reason" placeholder="A brief answer is perfectly sufficient."></textarea>
               </div>
               <div class="question">
                 <span class="q-label">Overall, how would you rate your cooperation with JagoPro? <span class="required">*</span></span>
                 <div id="overall-grid" class="scale5 survey-choice-stack"></div>
               </div>
               <div class="question">
-                <span class="q-label">Compared with other manufacturers or suppliers you work with, how would you rate JagoPro? <span class="required">*</span></span>
+                <span class="q-label">How does JagoPro compare with other manufacturers or suppliers you work with? <span class="required">*</span></span>
                 <div id="competitor-grid" class="choice-grid survey-choice-stack"></div>
               </div>
             </section>
@@ -105,10 +105,10 @@
             <section class="section" data-matrix="true">
               <div class="question">
                 <span class="q-label">How would you rate JagoPro in the following areas? <span class="required">*</span></span>
-                <span class="hint matrix-help">If an area has not been part of your cooperation with JagoPro, or you do not have enough information to assess it, select “I don't have enough information to rate this”.</span>
+                <span class="hint matrix-help">If an area has not been part of your cooperation with JagoPro, or you have not had enough experience to rate it, select “I can’t assess this”.</span>
                 <div class="matrix-wrap">
                   <table class="matrix survey-matrix">
-                    <thead><tr><th>Area</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th class="matrix-na-head">I don't have enough information to rate this</th></tr></thead>
+                    <thead><tr><th>Area</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th class="matrix-na-head">I can’t assess this</th></tr></thead>
                     <tbody id="matrix-body"></tbody>
                   </table>
                 </div>
@@ -118,34 +118,34 @@
 
             <section class="section">
               <div class="question">
-                <label class="q-label" for="improvement_priority">If JagoPro could improve only one part of our cooperation, what should it be? <span class="required">*</span></label>
+                <label class="q-label" for="improvement_priority">If we could improve just one aspect of our cooperation, which area should be our priority? <span class="required">*</span></label>
                 <select id="improvement_priority" name="improvement_priority" required>
-                  <option value="">Select a priority</option>
-                  <option value="quality">Quality and consistency</option>
+                  <option value="">Select an area</option>
+                  <option value="quality">Product quality and consistency</option>
                   <option value="delivery">Delivery reliability and predictability</option>
                   <option value="communication">Speed and quality of communication</option>
-                  <option value="proactive">Proactive communication about changes</option>
-                  <option value="technical">Technical expertise and advice</option>
+                  <option value="proactive">Proactive communication about changes and risks</option>
+                  <option value="technical">Technical expertise and quality of advice</option>
                   <option value="flexibility">Flexibility and responsiveness</option>
-                  <option value="development">Product development and implementation</option>
-                  <option value="complaints">Problem and complaint resolution</option>
+                  <option value="development">Product development and launch</option>
+                  <option value="complaints">Handling problems and complaints</option>
                   <option value="other">Other</option>
                 </select>
               </div>
               <div class="question">
-                <label class="q-label" for="improvement_reason">What makes this area the most important one to improve? <span class="optional">(optional)</span></label>
-                <textarea id="improvement_reason" name="improvement_reason" placeholder="If useful, briefly describe a situation, give an example or tell us what specifically we should change."></textarea>
+                <label class="q-label" for="improvement_reason">What could we do better in this area? <span class="optional">(optional)</span></label>
+                <textarea id="improvement_reason" name="improvement_reason" placeholder="If possible, share a specific example or briefly describe the change that would be most valuable to you."></textarea>
               </div>
             </section>
 
             <section class="section">
               <div class="question">
-                <label class="q-label" for="keep_comment">What works particularly well and should not be changed?</label>
-                <textarea id="keep_comment" name="keep_comment" placeholder="What should we definitely preserve?"></textarea>
+                <label class="q-label" for="keep_comment">What works particularly well in our cooperation and is worth preserving? <span class="optional">(optional)</span></label>
+                <textarea id="keep_comment" name="keep_comment" placeholder="What do you value most about working with JagoPro?"></textarea>
               </div>
               <div class="question">
-                <label class="q-label" for="additional_comment">Is there anything else you think we should know? <span class="optional">(optional)</span></label>
-                <textarea id="additional_comment" name="additional_comment" placeholder="Any additional comment, idea or context about your cooperation with JagoPro."></textarea>
+                <label class="q-label" for="additional_comment">Is there anything else you would like to share with us? <span class="optional">(optional)</span></label>
+                <textarea id="additional_comment" name="additional_comment" placeholder="Any additional comment, suggestion or context about your cooperation with JagoPro."></textarea>
               </div>
               <div class="grid-2">
                 <div class="question">
@@ -157,7 +157,7 @@
                   <input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com">
                 </div>
               </div>
-              <p class="privacy-note">We will use the responses to analyse the quality of our cooperation and plan improvement actions. Contact details are optional.</p>
+              <p class="privacy-note">We will use your responses to review the quality of our cooperation and plan improvement actions. Providing contact details is optional.</p>
             </section>
           </div>
 
@@ -169,7 +169,7 @@
         </form>
       </div>
 
-      <div id="success" class="success"><div><div class="success-mark">✓</div><h2>Thank you.</h2><p>Your response has been saved.</p></div></div>
+      <div id="success" class="success"><div><div class="success-mark">✓</div><h2>Thank you for your time.</h2><p>Your feedback will help us make our cooperation even better.</p></div></div>
     </div>
   </section>
 </main>
@@ -178,14 +178,14 @@
 
 <script>
 document.getElementById('nps-grid').innerHTML=[...Array(11).keys()].map(v=>`<div class="nps-option"><input id="nps${v}" type="radio" name="nps" value="${v}" ${v===0?'required':''}><label for="nps${v}">${v}</label></div>`).join('');
-const overallLabels={5:'very good',4:'rather good',3:'neutral',2:'rather poor',1:'very poor'};
+const overallLabels={5:'very good',4:'good',3:'neutral',2:'poor',1:'very poor'};
 document.getElementById('overall-grid').innerHTML=[5,4,3,2,1].map((v,i)=>`<div class="choice"><input id="overall${v}" type="radio" name="overall" value="${v}" ${i===0?'required':''}><label for="overall${v}">${v} · ${overallLabels[v]}</label></div>`).join('');
-const ds=[['quality','Product quality and consistency'],['delivery','Delivery reliability and predictability'],['communication','Speed and quality of communication'],['proactive','Proactive communication about changes and risks'],['technical','Technical expertise and quality of advice'],['flexibility','Flexibility and responsiveness'],['development','Product development and implementation'],['complaints','Problem and complaint resolution']];
-document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[1,2,3,4,5,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}">${v==='na'?"I don't have enough information to rate this":v}</label></td>`).join('')}</tr>`).join('');
-const cp=[['5','Much better'],['4','Rather better'],['3','About the same'],['2','Rather worse'],['1','Much worse'],['na','I cannot make a fair comparison']];
+const ds=[['quality','Product quality and consistency'],['delivery','Delivery reliability and predictability'],['communication','Speed and quality of communication'],['proactive','Proactive communication about changes and risks'],['technical','Technical expertise and quality of advice'],['flexibility','Flexibility and responsiveness'],['development','Product development and launch'],['complaints','Handling problems and complaints']];
+document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[1,2,3,4,5,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}">${v==='na'?'I can’t assess this':v}</label></td>`).join('')}</tr>`).join('');
+const cp=[['5','Much better'],['4','Somewhat better'],['3','About the same'],['2','Somewhat worse'],['1','Much worse'],['na','I can’t make a fair comparison']];
 document.getElementById('competitor-grid').innerHTML=cp.map(([v,l],i)=>`<div class="choice ${v==='na'?'neutral-choice':''}"><input id="cmp${v}" type="radio" name="competitor" value="${v}" ${i===0?'required':''}><label for="cmp${v}">${l}</label></div>`).join('');
 </script>
-<script src="assets/config.js"></script>
-<script src="assets/survey.js"></script>
+<script src="assets/config.js?v=2026.4"></script>
+<script src="assets/survey.js?v=2026.4"></script>
 </body>
 </html>

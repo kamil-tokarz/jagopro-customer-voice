@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <title>JagoPro — Ankieta satysfakcji klienta</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="assets/refinements.css">
+  <link rel="stylesheet" href="assets/styles.css?v=2026.4">
+  <link rel="stylesheet" href="assets/refinements.css?v=2026.4">
 </head>
 <body data-lang="pl">
 <header>
@@ -24,8 +24,8 @@
   <section class="hero">
     <div>
       <span class="eyebrow">Customer Voice</span>
-      <h1>Pomóż nam lepiej współpracować.</h1>
-      <p>Krótka ankieta o jakości relacji z JagoPro. Zajmie około 3 minut. Zależy nam na konkretnej informacji: co działa, co przeszkadza i co warto poprawić w pierwszej kolejności.</p>
+      <h1>Pomóż nam jeszcze lepiej współpracować.</h1>
+      <p>Ta krótka ankieta zajmie około 3 minut. Chcemy lepiej zrozumieć, co w naszej współpracy działa dobrze, a co możemy poprawić. Twoja opinia pomoże nam skupić się na właściwych priorytetach.</p>
     </div>
     <div class="molecule"><span class="dot" style="right:42%;top:42%"></span></div>
   </section>
@@ -37,8 +37,8 @@
         <li class="active">O Tobie</li>
         <li>Ogólna ocena</li>
         <li>Obszary współpracy</li>
-        <li>Co poprawić</li>
-        <li>Co zachować</li>
+        <li>Priorytet poprawy</li>
+        <li>Co warto zachować</li>
       </ol>
     </aside>
 
@@ -58,22 +58,22 @@
                 <input id="company" name="company" type="text" autocomplete="organization" placeholder="Nazwa firmy" required>
               </div>
               <div class="question">
-                <label class="q-label" for="role">Który obszar najlepiej opisuje Twoją rolę? <span class="required">*</span></label>
+                <label class="q-label" for="role">Który obszar najlepiej odpowiada Twojej roli we współpracy z JagoPro? <span class="required">*</span></label>
                 <select id="role" name="role" required>
-                  <option value="">Wybierz</option>
-                  <option value="procurement">Zakupy / Procurement</option>
-                  <option value="rd">R&amp;D / Product Development</option>
-                  <option value="quality">Quality / Regulatory</option>
-                  <option value="supply">Supply Chain / Logistyka</option>
-                  <option value="sales">Sprzedaż / Marketing / Brand</option>
-                  <option value="management">Zarząd / Management</option>
-                  <option value="other">Inna</option>
+                  <option value="">Wybierz obszar</option>
+                  <option value="procurement">Zakupy</option>
+                  <option value="rd">R&amp;D / Rozwój produktu</option>
+                  <option value="quality">Jakość / Regulatory</option>
+                  <option value="supply">Łańcuch dostaw / Logistyka</option>
+                  <option value="sales">Sprzedaż / Marketing / Marka</option>
+                  <option value="management">Zarząd / Kadra zarządzająca</option>
+                  <option value="other">Inny obszar</option>
                 </select>
               </div>
               <div class="question">
                 <label class="q-label" for="cooperation">Jak długo współpracujesz z JagoPro? <span class="required">*</span></label>
                 <select id="cooperation" name="cooperation" required>
-                  <option value="">Wybierz</option>
+                  <option value="">Wybierz okres</option>
                   <option value="lt1">Krócej niż rok</option>
                   <option value="1to3">1–3 lata</option>
                   <option value="3to5">3–5 lat</option>
@@ -89,15 +89,15 @@
                 <div class="nps-legend"><span>Zdecydowanie nie</span><span>Zdecydowanie tak</span></div>
               </div>
               <div class="question">
-                <label class="q-label" for="nps_reason">Co przede wszystkim wpłynęło na tę ocenę?</label>
-                <textarea id="nps_reason" name="nps_reason" placeholder="Jedno–dwa zdania wystarczą."></textarea>
+                <label class="q-label" for="nps_reason">Co miało największy wpływ na tę ocenę? <span class="optional">(opcjonalnie)</span></label>
+                <textarea id="nps_reason" name="nps_reason" placeholder="Krótka odpowiedź w zupełności wystarczy."></textarea>
               </div>
               <div class="question">
                 <span class="q-label">Jak ogólnie oceniasz współpracę z JagoPro? <span class="required">*</span></span>
                 <div id="overall-grid" class="scale5 survey-choice-stack"></div>
               </div>
               <div class="question">
-                <span class="q-label">Na tle innych producentów lub dostawców, z którymi współpracujesz, jak oceniasz JagoPro? <span class="required">*</span></span>
+                <span class="q-label">Jak JagoPro wypada na tle innych producentów lub dostawców, z którymi współpracujesz? <span class="required">*</span></span>
                 <div id="competitor-grid" class="choice-grid survey-choice-stack"></div>
               </div>
             </section>
@@ -105,10 +105,10 @@
             <section class="section" data-matrix="true">
               <div class="question">
                 <span class="q-label">Jak oceniasz JagoPro w poniższych obszarach? <span class="required">*</span></span>
-                <span class="hint matrix-help">Jeśli dany obszar nie dotyczył Twojej współpracy z JagoPro lub nie masz wystarczających informacji, wybierz „Nie mam podstaw do oceny”.</span>
+                <span class="hint matrix-help">Jeśli dany obszar nie dotyczy Twojej współpracy z JagoPro lub nie masz wystarczającego doświadczenia, aby go ocenić, wybierz „Nie mogę ocenić”.</span>
                 <div class="matrix-wrap">
                   <table class="matrix survey-matrix">
-                    <thead><tr><th>Obszar</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th class="matrix-na-head">Nie mam podstaw do oceny</th></tr></thead>
+                    <thead><tr><th>Obszar</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th class="matrix-na-head">Nie mogę ocenić</th></tr></thead>
                     <tbody id="matrix-body"></tbody>
                   </table>
                 </div>
@@ -118,34 +118,34 @@
 
             <section class="section">
               <div class="question">
-                <label class="q-label" for="improvement_priority">Gdyby JagoPro miało poprawić tylko jeden element współpracy, co powinno to być? <span class="required">*</span></label>
+                <label class="q-label" for="improvement_priority">Jeśli mielibyśmy poprawić tylko jeden element współpracy, który obszar powinien być naszym priorytetem? <span class="required">*</span></label>
                 <select id="improvement_priority" name="improvement_priority" required>
-                  <option value="">Wybierz priorytet</option>
-                  <option value="quality">Jakość i powtarzalność</option>
-                  <option value="delivery">Terminowość i przewidywalność</option>
+                  <option value="">Wybierz obszar</option>
+                  <option value="quality">Jakość i powtarzalność produktów</option>
+                  <option value="delivery">Terminowość i przewidywalność realizacji</option>
                   <option value="communication">Szybkość i jakość komunikacji</option>
-                  <option value="proactive">Proaktywna informacja o zmianach</option>
-                  <option value="technical">Kompetencje techniczne i doradztwo</option>
-                  <option value="flexibility">Elastyczność i reagowanie</option>
-                  <option value="development">Rozwój i wdrażanie produktów</option>
-                  <option value="complaints">Rozwiązywanie problemów / reklamacji</option>
+                  <option value="proactive">Proaktywne informowanie o zmianach i ryzykach</option>
+                  <option value="technical">Kompetencje techniczne i jakość doradztwa</option>
+                  <option value="flexibility">Elastyczność i szybkość reagowania</option>
+                  <option value="development">Współpraca przy rozwoju i wdrażaniu produktów</option>
+                  <option value="complaints">Rozwiązywanie problemów i obsługa reklamacji</option>
                   <option value="other">Inny obszar</option>
                 </select>
               </div>
               <div class="question">
-                <label class="q-label" for="improvement_reason">Co sprawia, że ten obszar wymaga poprawy? <span class="optional">(opcjonalnie)</span></label>
-                <textarea id="improvement_reason" name="improvement_reason" placeholder="Jeśli chcesz, opisz krótko sytuację, podaj przykład lub wskaż, co konkretnie powinniśmy zmienić."></textarea>
+                <label class="q-label" for="improvement_reason">Co w tym obszarze powinniśmy zrobić lepiej? <span class="optional">(opcjonalnie)</span></label>
+                <textarea id="improvement_reason" name="improvement_reason" placeholder="Jeśli możesz, podaj konkretny przykład lub krótko opisz zmianę, która byłaby dla Ciebie najbardziej wartościowa."></textarea>
               </div>
             </section>
 
             <section class="section">
               <div class="question">
-                <label class="q-label" for="keep_comment">Co działa szczególnie dobrze i nie powinno zostać zmienione?</label>
-                <textarea id="keep_comment" name="keep_comment" placeholder="Co powinniśmy koniecznie zachować?"></textarea>
+                <label class="q-label" for="keep_comment">Co w naszej współpracy działa szczególnie dobrze i warto to zachować? <span class="optional">(opcjonalnie)</span></label>
+                <textarea id="keep_comment" name="keep_comment" placeholder="Co cenisz najbardziej we współpracy z JagoPro?"></textarea>
               </div>
               <div class="question">
-                <label class="q-label" for="additional_comment">Czy jest jeszcze coś, co warto nam przekazać? <span class="optional">(opcjonalnie)</span></label>
-                <textarea id="additional_comment" name="additional_comment" placeholder="Dodatkowa uwaga, pomysł lub kontekst dotyczący współpracy z JagoPro."></textarea>
+                <label class="q-label" for="additional_comment">Czy jest jeszcze coś, czym chcesz się z nami podzielić? <span class="optional">(opcjonalnie)</span></label>
+                <textarea id="additional_comment" name="additional_comment" placeholder="Dodatkowa uwaga, sugestia lub kontekst dotyczący współpracy z JagoPro."></textarea>
               </div>
               <div class="grid-2">
                 <div class="question">
@@ -157,7 +157,7 @@
                   <input id="email" name="email" type="email" autocomplete="email" placeholder="adres@firma.pl">
                 </div>
               </div>
-              <p class="privacy-note">Odpowiedzi wykorzystamy do analizy jakości współpracy i planowania działań doskonalących. Dane kontaktowe są opcjonalne.</p>
+              <p class="privacy-note">Odpowiedzi wykorzystamy do analizy jakości współpracy i planowania działań usprawniających. Podanie danych kontaktowych jest dobrowolne.</p>
             </section>
           </div>
 
@@ -169,7 +169,7 @@
         </form>
       </div>
 
-      <div id="success" class="success"><div><div class="success-mark">✓</div><h2>Dziękujemy.</h2><p>Twoja odpowiedź została zapisana.</p></div></div>
+      <div id="success" class="success"><div><div class="success-mark">✓</div><h2>Dziękujemy za poświęcony czas.</h2><p>Twoja opinia pomoże nam jeszcze lepiej odpowiadać na potrzeby klientów.</p></div></div>
     </div>
   </section>
 </main>
@@ -180,12 +180,12 @@
 document.getElementById('nps-grid').innerHTML=[...Array(11).keys()].map(v=>`<div class="nps-option"><input id="nps${v}" type="radio" name="nps" value="${v}" ${v===0?'required':''}><label for="nps${v}">${v}</label></div>`).join('');
 const overallLabels={5:'bardzo dobrze',4:'raczej dobrze',3:'neutralnie',2:'raczej źle',1:'bardzo źle'};
 document.getElementById('overall-grid').innerHTML=[5,4,3,2,1].map((v,i)=>`<div class="choice"><input id="overall${v}" type="radio" name="overall" value="${v}" ${i===0?'required':''}><label for="overall${v}">${v} · ${overallLabels[v]}</label></div>`).join('');
-const ds=[['quality','Jakość i powtarzalność produktów'],['delivery','Terminowość i przewidywalność realizacji'],['communication','Szybkość i jakość komunikacji'],['proactive','Proaktywne informowanie o zmianach i ryzykach'],['technical','Kompetencje techniczne i jakość doradztwa'],['flexibility','Elastyczność i szybkość reagowania'],['development','Współpraca przy rozwoju i wdrażaniu produktów'],['complaints','Rozwiązywanie problemów i reklamacji']];
-document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[1,2,3,4,5,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}">${v==='na'?'Nie mam podstaw do oceny':v}</label></td>`).join('')}</tr>`).join('');
-const cp=[['5','Zdecydowanie lepiej'],['4','Raczej lepiej'],['3','Podobnie'],['2','Raczej gorzej'],['1','Zdecydowanie gorzej'],['na','Nie mam podstaw do porównania']];
+const ds=[['quality','Jakość i powtarzalność produktów'],['delivery','Terminowość i przewidywalność realizacji'],['communication','Szybkość i jakość komunikacji'],['proactive','Proaktywne informowanie o zmianach i ryzykach'],['technical','Kompetencje techniczne i jakość doradztwa'],['flexibility','Elastyczność i szybkość reagowania'],['development','Współpraca przy rozwoju i wdrażaniu produktów'],['complaints','Rozwiązywanie problemów i obsługa reklamacji']];
+document.getElementById('matrix-body').innerHTML=ds.map(([k,l])=>`<tr><td>${l}</td>${[1,2,3,4,5,'na'].map(v=>`<td class="${v==='na'?'matrix-na-cell':''}"><input class="matrix-radio" id="${k}-${v}" type="radio" name="${k}" value="${v}"><label for="${k}-${v}">${v==='na'?'Nie mogę ocenić':v}</label></td>`).join('')}</tr>`).join('');
+const cp=[['5','Zdecydowanie lepiej'],['4','Raczej lepiej'],['3','Porównywalnie'],['2','Raczej gorzej'],['1','Zdecydowanie gorzej'],['na','Nie mogę rzetelnie porównać']];
 document.getElementById('competitor-grid').innerHTML=cp.map(([v,l],i)=>`<div class="choice ${v==='na'?'neutral-choice':''}"><input id="cmp${v}" type="radio" name="competitor" value="${v}" ${i===0?'required':''}><label for="cmp${v}">${l}</label></div>`).join('');
 </script>
-<script src="assets/config.js"></script>
-<script src="assets/survey.js"></script>
+<script src="assets/config.js?v=2026.4"></script>
+<script src="assets/survey.js?v=2026.4"></script>
 </body>
 </html>
