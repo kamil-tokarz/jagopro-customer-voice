@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>JagoPro — Customer Experience Analytics</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="admin-body">
+  <header class="admin-top">
+    <div class="shell topbar">
+      <div class="brand">
+        <img class="logo" src="assets/jagopro-logo.png" alt="JagoPro">
+        <div class="brandline"></div>
+        <div class="brandcopy">Customer Experience<br>Analytics</div>
+      </div>
+      <span class="admin-badge">INTERNAL VIEW</span>
+    </div>
+  </header>
+
+  <main class="shell analytics-main">
+    <div class="analytics-head">
+      <div>
+        <span class="eyebrow">Voice of Customer</span>
+        <h1>Customer Experience</h1>
+        <p>Co klient mówi · co wymaga działania · gdzie jest największa luka.</p>
+      </div>
+      <div class="toolbar">
+        <select id="role-filter" aria-label="Filtr roli">
+          <option value="all">Wszystkie role</option>
+          <option value="procurement">Zakupy</option>
+          <option value="rd">R&amp;D / Product</option>
+          <option value="quality">Quality / Regulatory</option>
+          <option value="supply">Supply Chain</option>
+          <option value="sales">Sales / Marketing</option>
+          <option value="management">Management</option>
+        </select>
+        <button id="demo-btn" type="button">Demo</button>
+        <button id="local-btn" type="button">Dane lokalne</button>
+        <button id="export-btn" type="button">Eksport CSV</button>
+        <label class="btn btn-secondary" style="min-width:auto;padding:10px 12px">Import JSON<input id="import-file" type="file" accept="application/json" hidden></label>
+      </div>
+    </div>
+
+    <div class="demo-strip">
+      <div><strong id="data-source">Dane demonstracyjne</strong> · ekran pokazuje docelową logikę analityczną, nie rzeczywiste wyniki JagoPro.</div>
+      <div>n=<strong id="response-count">0</strong></div>
+    </div>
+
+    <section class="kpi-grid">
+      <article class="panel kpi"><div class="kpi-label">Relationship NPS</div><div id="kpi-nps" class="kpi-value">—</div><div class="kpi-sub">główny wskaźnik relacji</div></article>
+      <article class="panel kpi"><div class="kpi-label">CSAT Top-2</div><div id="kpi-csat" class="kpi-value">—</div><div class="kpi-sub">udział ocen 4–5</div></article>
+      <article class="panel kpi"><div class="kpi-label">Overall satisfaction</div><div id="kpi-overall" class="kpi-value">—</div><div class="kpi-sub">średnia 1–5, pomocniczo</div></article>
+      <article class="panel kpi"><div class="kpi-label">Critical feedback</div><div id="kpi-critical" class="kpi-value">—</div><div class="kpi-sub">NPS 0–6 lub driver 1–2</div></article>
+    </section>
+
+    <section class="analytics-grid">
+      <article class="panel">
+        <div class="panel-head"><div><h3>Drivery doświadczenia</h3><span>wynik + priorytet działania</span></div><span>luka × wpływ na NPS</span></div>
+        <div class="panel-body"><div id="driver-list" class="driver-list"></div></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><div><h3>Struktura NPS</h3><span>krytycy · neutralni · promotorzy</span></div></div>
+        <div class="panel-body">
+          <div id="nps-stack" class="nps-stack"><div class="nps-d"></div><div class="nps-p"></div><div class="nps-r"></div></div>
+          <div class="nps-legend-admin"><span>Krytycy 0–6</span><span>Neutralni 7–8</span><span>Promotorzy 9–10</span></div>
+          <div id="role-list" class="role-list"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="full-grid">
+      <article class="panel">
+        <div class="panel-head"><div><h3>Closed loop — do reakcji</h3><span>najpierw klienci z sygnałem ryzyka</span></div></div>
+        <div class="panel-body"><div id="alert-list" class="alert-list"></div></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><div><h3>Głos klienta</h3><span>ostatnie komentarze jakościowe</span></div></div>
+        <div class="panel-body"><div id="comment-list" class="comment-list"></div></div>
+      </article>
+    </section>
+
+    <section class="panel" style="margin-top:14px">
+      <div class="panel-head"><div><h3>Rekomendowane priorytety</h3><span>automatycznie na podstawie luki i zależności z NPS</span></div><span>nie zastępuje analizy przyczynowej</span></div>
+      <div class="panel-body"><div id="action-list" class="action-list"></div></div>
+    </section>
+  </main>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/analytics.js"></script>
+</body>
+</html>
